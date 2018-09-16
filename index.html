@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <h1>Pure JS Barcode Reader</h1>
+    <div>Barcode result: <span id="dbr"></span></div>
+    <canvas id="pcCanvas" width="640" height="480" style="display: none; float: bottom;"></canvas>
+    <canvas id="mobileCanvas" width="240" height="320" style="display: none; float: bottom;"></canvas>
+    <button id="go">Read Barcode</button>
+    <div>
+
+    </div>
+
+    <div class="modal fade" id="livestream_scanner" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Scan Your Barcode</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>        </button>
+                </div>
+
+                <div id="dvVideo" class="modal-body">
+                    <div class="select">
+                        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+                    </div>
+                    <div class="error"></div><br />
+                    <video muted autoplay id="video" style="width: 100%; height: auto;" playsinline="true"></video>
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="vendor/jquery-3.3.1.min.js"></script>
+<script src="vendor/bootstrap.min.js"></script>
+<script async src="zxing.js"></script>
+<script src="video.js"></script>
+
+</html>
